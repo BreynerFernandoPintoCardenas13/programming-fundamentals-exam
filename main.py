@@ -1,10 +1,15 @@
-suma=0
-for i in range(1,6):
-    voltajes=float(input(f"enter the voltage {i} : "))
-    suma+=voltajes
-promedio=suma/5
-print(promedio)
-if promedio>220:
-    print("ALTO VOLAJE")
+import math
+ladoA=float(input("ingrese el lado A del triangulo: "))
+
+ladoA=((math.sqrt(3))/4*math.pow(ladoA, 2))
+if ladoA<1000:
+    decimal=str(input("quieres el resultado con decimales o enteros?: "))
+    if decimal.lower()=="decimales": 
+        print(f"el area es: {ladoA}")
+    elif decimal.lower()=="enteros":
+        area=round(ladoA)
+        print(f"el area es: {area}")
+    else:
+        print("palabra mal escrita")
 else:
-    print("VOLTAJE CORRECTO")
+    print("DATOS NO VALIDOS")
